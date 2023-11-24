@@ -1,0 +1,24 @@
+{
+  "name": "track_travel_expenses_nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.1.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  name       String
+  trip       Trip[]
+  age        Int
+  country    String
+}
+
+model Trip {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  name        String
+  start_date  DateTime   @default(now())
+  end_date    DateTime?
+  user        User       @relation(fields: [userId], references: [id])
+  city        String
+  country     String
+}
+
+model Expenses {
+  id            Int          @id @default(autoincrement())
+  trip          Int
+  name          String
+  amount        Int
+  currency      String
+  description   String
+}
+
